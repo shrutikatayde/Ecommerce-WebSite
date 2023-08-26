@@ -74,7 +74,7 @@ const CartMenu = () => {
                       width="123px"
                       height="164px"
                       src={
-                        "http://localhost:1337${items?.attributes?.image?.data?.attributes?.formats?.medium?.url}"
+                        `http://localhost:1337${item?.attributes?.image?.data?.attributes?.formats?.medium?.url}`
                       }
                     />
                   </Box>
@@ -125,7 +125,7 @@ const CartMenu = () => {
                     </FlexBox>
                   </Box>
                 </FlexBox>
-                <Divider />
+                <Divider/>
               </Box>
             ))}
           </Box>

@@ -13,7 +13,7 @@ const Item = ({ item, width }) => {
   const [count, setCount] = useState(1);
   const [isHovered, setIsHovered] = useState(false);
   const {
-    pallete: { neutral },
+    palette: { neutral },
   } = useTheme();
 
   const { category, price, name, image } = item.attributes;
@@ -42,7 +42,7 @@ const Item = ({ item, width }) => {
           style={{ cursor: "pointer" }}
         />
         <Box
-          display={isHovered ? "blocked" : "none"}
+          display={isHovered ? "block" : "none"}
           position="absolute"
           bottom="10%"
           left="0"
@@ -57,7 +57,7 @@ const Item = ({ item, width }) => {
               backgroundColor={shades.neutral[100]}
               borderRadius="3px"
             >
-              <IconButton onClick={() => setCount(Math.max(count, -1, 1))}>
+              <IconButton onClick={() => setCount(Math.max(count -1, 1))}>
                 <RemoveIcon />
               </IconButton>
 
@@ -68,8 +68,8 @@ const Item = ({ item, width }) => {
                       </Box>
                       
                       {/* button */}
-                      <Button onClick={() => { dispatch(addToCart({ item: { ...item, count } })) }}
-                      sx={{backgoundColor: shades.primary[300], color:"white"}}>Add to Cart</Button>
+                      <Button onClick={() => { dispatch(addToCart({ items: { ...item, count } })) }}
+                      sx={{backgroundColor: shades.primary[300], color:"white"}}>Add to Cart</Button>
                       
           </Box>
         </Box>
@@ -79,7 +79,7 @@ const Item = ({ item, width }) => {
               <Typography varient="subtitle2" color={neutral.dark}>
                   {category
                       .replace(/([A-Z])/g, "$1")
-                  .replace(/^./, (str)=>str.toUpperCasr())}
+                  .replace(/^./, (str)=>str.toUpperCase())}
               </Typography>
               <Typography>{name}</Typography>
               <Typography fontWeight="bold">${price}</Typography>
@@ -88,3 +88,4 @@ const Item = ({ item, width }) => {
     </Box>
   );
 };
+export default Item;
