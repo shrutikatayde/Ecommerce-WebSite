@@ -14,7 +14,7 @@ const Shipping = ({
         <Box m="30px auto">
             {/* Billing form */}
             <Box>
-                <Typography sc={{ mb: "15px" }} fontSize="18px">
+                <Typography sx={{ mb: "15px" }} fontSize="18px">
                     Billing Information
                 </Typography>
                 <AddressForm
@@ -28,6 +28,7 @@ const Shipping = ({
             </Box>
             <Box mb="20px">
                 <FormControlLabel
+                    label="Same for Shipping Address"
                     control={
                         <Checkbox
                             defaultChecked

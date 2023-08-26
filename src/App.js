@@ -38,8 +38,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="item/:itemId" element={<ItemDetails />} />
-          <Route path="ckeckout" element={<Checkout />} />
-          <Route path="ckeckout/success" element={<Confirmation />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="checkout/success" element={<Confirmation />} />
         </Routes>
         <CartMenu />
         <Footer/>
